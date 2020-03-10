@@ -1,5 +1,5 @@
 <h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
+<p><%= simple_format(@article.body) %></p>
 <%= link_to "Back to Articles List", articles_path, class: 'to_index' %>
-<%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+<%= link_to "Delete Article", article_path(@article), class: 'bottom_link', method: :delete, data: {confirm: "Really delete the article?"} %>
 <%= link_to "Edit Article", edit_article_path(@article) %>

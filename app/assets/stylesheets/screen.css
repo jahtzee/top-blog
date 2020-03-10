@@ -69,6 +69,8 @@ td {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     line-height: 1;
     color: black;
     background: white
@@ -443,6 +445,10 @@ a.to_index,
     text-shadow: #fff 0 1px;
     text-decoration: none;
     color: #555
+}
+
+a.bottom_link {
+    margin-top: auto;
 }
 
 .top-button:hover,
