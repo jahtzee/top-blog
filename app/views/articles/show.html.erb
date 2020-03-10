@@ -1,5 +1,10 @@
 <h1><%= @article.title %></h1>
-<p><%= simple_format(@article.body) %></p>
+<p class="article_body" style="white-space: pre-wrap;"><%= @article.body %></p>
+<hr>
 <%= link_to "Back to Articles List", articles_path, class: 'to_index' %>
-<%= link_to "Delete Article", article_path(@article), class: 'bottom_link', method: :delete, data: {confirm: "Really delete the article?"} %>
-<%= link_to "Edit Article", edit_article_path(@article) %>
+<%= link_to "Edit Article", edit_article_path(@article), class: 'edit_link' %>
+<%= link_to "Delete Article", article_path(@article), class: 'delete_link', method: :delete, data: {confirm: "Really delete the article?"} %>
+<hr>
+<%= render partial: "comments/form" %>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: "articles/comment", collection: @article.comments %>
